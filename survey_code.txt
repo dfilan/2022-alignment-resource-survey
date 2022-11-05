@@ -1,0 +1,102 @@
+-- Note to reader: this is the GuidedTrack code that generated this survey.
+
+*settings
+	*back: yes
+
+Thanks for taking this survey! We'd like to ask you how you relate to AI alignment, which resources you've found useful, and how valuable you found them. We think it will probably take you between 5 and 15 minutes to fill out.
+
+*button: Let's go!
+
+*header: First, we'd like some context for how you relate to AI alignment.
+
+*question: How involved in AI alignment are you? Please select all that apply.
+	*type: checkbox
+	I have heard of AI alignment
+	I am interested in AI alignment research
+	I am trying to move into a technical AI alignment career
+	I spend some of my time solving technical problems related to AI alignment
+	I spend some of my time doing AI alignment field/community-building
+	I spend some of my time facilitating technical AI alignment research in ways other than doing it directly
+	I spend some of my time publicly communicating about AI alignment
+	I am paid to work on technical AI alignment research
+	I help run an organization with an AI alignment mission (e.g. CHAI, MIRI, Anthropic)
+	*save: involvement
+	
+*for: category in involvement
+	*if: category = "I am interested in AI alignment research"
+		*page
+			*question: For how many years have you been interested in AI alignment research? Please enter an integer, rounded to the nearest year.
+				*type: number
+				*after: year(s)
+	*if: category = "I am paid to work on technical AI alignment research"
+		*page
+			*question: For how many years have you been paid to work on technical AI alignment research? Please enter an integer, rounded to the nearest year.
+				*type: number
+				*after: year(s)
+	
+
+*question: Which of the following resources have you spent more than 30 minutes engaging with?
+	*type: checkbox
+	*shuffle
+	AGI Safety Fundamentals Course
+	the AI Alignment Newsletter
+	AXRP - the AI X-risk Research Podcast
+	the ML Safety newsletter
+	Human Compatible (book)
+	The Alignment Problem (book)
+	Rob Miles videos
+	the Embedded Agency sequence on the Alignment Forum
+	the Value Learning sequence on the Alignment Forum
+	the Iterated Amplification sequence on the Alignment Forum
+	the FLI podcast
+	the 80,000 Hours podcast
+	Life 3.0 (book)
+	Superintelligence (book)
+	AI Safety Camp
+	AIRCS workshops
+	the Machine Learning for Alignment Bootcamp
+	the ARCHES agenda by Andrew Critch and David Krueger
+	Unsolved Problems in ML Safety by Hendrycks et al
+	Concrete Problems in AI Safety by Amodei et al
+	Scalable agent alignment via reward modeling: a research direction by Leike et al (aka "the recursive reward modelling agenda")
+	conversations with AI alignment researchers at conferences
+	talks by AI alignment researchers
+	the annual AI Alignment Literature Review and Charity Comparison
+	*save: resources
+	
+>> verbal_rating_scale = [["Not at all", 0], ["A little", 1], ["Moderately", 2], ["Very", 3], ["Extremely", 4]]
+>> prob_rating_scale = [["0-20%", 0], ["20-40%", 1], ["40-60%", 2], ["60-80%", 3], ["80-100%", 4]]
+
+*header: Now, we'd like to ask you questions about how useful you found each resource, and whether you would recommend them to others.
+
+*for: resource in resources
+	*page
+		*question: Overall, how useful have you found {resource}?
+			*answers: verbal_rating_scale
+                        -- Note to reader: answers like this one should have been saved in an Association (GuidedTrack's version of dictionaries), so that pressing the back button wouldn't mess everything up: https://docs.guidedtrack.com/api/#associations
+		
+		*question: How likely would you be to recommend {resource} as an AI alignment resource to a friend getting into AI alignment, who hadn't already read widely in the space?
+			*answers: prob_rating_scale
+
+		*question: How likely would you be to recommend {resource} as an AI alignment resource to a friend who is paid to do AI alignment research?
+			*answers: prob_rating_scale
+			
+		*if: (resource = "conversations with AI alignment researchers at conferences") or (resource = "talks by AI alignment researchers")
+			*question: Please specify which researchers you're thinking of. Also, if you'd like to go into detail about your answers about {resource}, you can do so here.
+				*type: paragraph
+				*blank
+		*if: not ((resource = "conversations with AI alignment researchers at conferences") or (resource = "talks by AI alignment researchers"))
+			*question: If you'd like to go into detail about your answers about {resource}, you can do so here.
+				*type: paragraph
+				*blank
+		
+		
+*question: Is there anything else you'd like to tell us?
+	*type: paragraph
+	*blank
+	
+*question: Where did you hear about this survey?
+	*type: paragraph
+	*blank
+
+*header: Thanks for helping us out!
