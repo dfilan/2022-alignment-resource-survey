@@ -11,6 +11,7 @@ Participants were shown a list of resources, select those they'd engaged with fo
 ## My summary of the results
 
 - AXRP, my podcast, is highly rated among people paid to work on technical AI alignment resources, but less highly rated in other cohorts.
+  - On a personal note, I find this a bit disappointing: I had hoped it could be useful for people orienting to research directions that they had not read widely about.
 - Rob Miles videos are highly rated among everyone, more than I would have guessed.
 - People really liked the AI Safety Camp, the AGI Safety Fundamentals Course, and conversations with AI alignment researchers.
 - People trying to get into alignment really liked the above and also MLAB. That said, they recommend Rob Miles videos higher than the AI Safety Camp and conversations with AI alignment researchers (but lower than MLAB and the AGI Safety Fundamentals Course).
@@ -204,3 +205,5 @@ The probability rating scale:
 - 4: 80-100%
 
 As well as the details published here, I also collected how many years people had been interested in AI alignment and/or paid to work on technical AI alignment research, as applicable. Also, people were able to write in comments about specific resources, as well as the survey as a whole, and could write in the place they heard about the survey.
+
+For more details, you can see my [GitHub repository](https://github.com/dfilan/2022-alignment-resource-survey) for this survey. It contains the GuidedTrack code to specify the survey, the results, and a script to analyze the results. Note that I redacted some details of some comments to remove detail that might identify a respondent.
