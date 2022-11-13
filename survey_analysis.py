@@ -254,3 +254,9 @@ def recommend_to(data_subset):
 # print("\nfac_rec_new:", fac_rec_new)
 
 # print("\nfac_rec_paid:", fac_rec_paid)
+
+# run_rec_new, run_rec_paid = recommend_to(filtered_pop(data, "I help run an organization with an AI alignment mission (e.g. CHAI, MIRI, Anthropic)"))
+
+# print("\nrun_rec_new:", run_rec_new)
+
+# print("\nrun_rec_paid:", run_rec_paid)
